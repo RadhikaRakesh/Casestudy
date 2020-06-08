@@ -1,0 +1,59 @@
+body{
+    background-color: #422057ff !important;
+    
+  }
+  .navbar{
+      background-color: #fcf951ff;
+  }
+  #view{
+      
+      margin-left: 100px;
+      margin-top: 50px;
+     
+  }
+ #warn{
+    color:#fcf951ff;
+ }
+ #doimage{
+    margin:50px 100px 50px 100px;
+     
+     width: 75%;
+     height: 600px; 
+    background-image: url(https://as1.ftcdn.net/jpg/02/29/77/86/500_F_229778671_mGjDsGIgrpuX2xcPFzBJ5EIiLEdzNdrz.jpg);
+  
+}
+table{
+    
+    max-width: 650px;
+
+    table-layout: fixed;
+    background-color:#fcf951ff;
+    max-height: 500px;
+    display: block;
+    overflow: auto;
+
+}
+table th {
+    
+    height: 75px;
+    
+    color:#422057ff;
+  }
+th {
+    font-weight:bold;
+    font-family: sans-serif;
+    font-size: large;
+   /* color: #e0c568ff;*/
+}
+table, th, td {
+    
+    border: solid 2px rgb(231, 22, 22);
+    border-collapse: collapse;
+    padding: 2px 5px;
+    text-align: center;
+}
+table tr {
+    color: #422057ff;
+    height: 50px;
+
+}
