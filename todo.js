@@ -8,7 +8,7 @@ $(document).ready(function(){
         createtable();
         $("footer").css("position","sticky");
     });
-   // $("#div").load("h",function(res,status,xhr){
+   
 
     function createtable() {
 
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 $("<td></td>").text(data[i].id).appendTo(row);
                 $("<td></td>").text(data[i].title).appendTo(row);
                 if(data[i].completed==true)
-                $("<td></td>").html("<input type=checkbox id=checklist name=checktodo checked>").appendTo(row);   
+                $("<td></td>").html("<input type=checkbox id=checklist name=checktodo checked disabled>").appendTo(row);   
                 if(data[i].completed==false)
                 $("<td></td>").html("<input type=checkbox>").appendTo(row);   
 
@@ -53,25 +53,36 @@ $(document).ready(function(){
         }); */
 
         $(document).on('change', '[type=checkbox]', function() {
-            
+            var flag;
             console.log("clicked");
+            if($(this).prop("checked") == true)
+                flag=1;
+            else
+                 flag=0; 
+            console.log();
         //  checkcount();
-           var promise1=checkcount();
+           var promise1=checkcount(flag);
             promise1
               .then(function(c){
                alert(" Congrats. 5 Tasks have been Successfully Completed");
                count=0;
+               alert("You can complete more tasks ");
                });
+               
         });
         
-       function checkcount(){
+       function checkcount(flag){
             return new Promise(function(resolve,reject){
+                if(flag==1)
                 count++;
+                else
+                count--;
                 console.log("count: "+count);
                 if(count==5)
                 {
                     resolve(count);
                 }
+                
                 
             });
         } 
